@@ -2,10 +2,12 @@ import React from 'react';
 export class Create extends React.Component {//Returns below text when called
     constructor() {
         super();
+        //Saves value of taken in value.
         this.onSubmit = this.onSubmit.bind(this);
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangeYear = this.onChangeYear.bind(this);
         this.onChangePoster = this.onChangePoster.bind(this);
+        
         this.state = {
             Title: '',
             Year: '',
@@ -27,12 +29,16 @@ export class Create extends React.Component {//Returns below text when called
         this.setState({
             Poster: e.target.value
         })
+        //Takes in value (e, Thats passed from the input tag) and sets it to Poster in constructor
     }
     onSubmit(e) {
         e.preventDefault();
         alert("Movie:" + this.state.Title + " " + this.state.Year + " " + this.state.Poster);
+        //displays taken in info
     }
     render() {
+        //Creates a form
+        // on submiting takes value and sets state in stated method Eg. onchangeTitle saves to its method
         return (
             <div className='App'>
                 <form onSubmit={this.onSubmit}>

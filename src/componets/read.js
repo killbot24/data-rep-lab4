@@ -8,13 +8,13 @@ export class Read extends React.Component {//Returns below text when called
 
     };
     componentDidMount() {
-        axios.get('https://jsonblob.com/api/jsonblob/894944504570986496')
+        axios.get('https://jsonblob.com/api/jsonblob/894944504570986496') //Gets info from url
             .then(
                 (response) => {
-                    this.setState({ movies: response.data.movies})
+                    this.setState({ movies: response.data.movies}) //Takes the response and saves it into movies above. Works from there as did before
                 })
-            .catch(
-                (error) => { console.log(error) }
+            .catch(//Error Catch
+                (error) => { console.log(error) }//Displays error
             )
 
     }
